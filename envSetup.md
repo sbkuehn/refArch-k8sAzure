@@ -1,8 +1,8 @@
 ## Configure your environment
 Requirements:
 <br>1. Azure CLI installed
-2. Az PowerShell module installed
-3. Cloud Shell
+<br>2. Az PowerShell module installed
+<br>3. Cloud Shell
 
 **Login to your Azure account**
 
