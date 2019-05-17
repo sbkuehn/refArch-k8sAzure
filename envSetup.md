@@ -1,11 +1,11 @@
 ## Configure environment (local or in Azure)
 <br>
-**Requirements:**
+<b>Requirements:</b>
 <br>1. Azure CLI
 <br>2. Az PowerShell Module
 <br>3. Cloud Shell - If you cannot install the Azure CLI or Az PowerShell Module locally, Cloud Shell is another alternative to running commands, scripts, and templates.
 <br><br>
-**Login to your Azure account**
+<b>Login to your Azure account:</b>
 
     az login
 Note: Cloud Shell automatically logs you in your account.
