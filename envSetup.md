@@ -1,14 +1,15 @@
 ## Configure environment (local or in Azure)
-<br><br>
+<br>
 **Requirements:**
-<br>1. Azure CLI installed
-<br>2. Az PowerShell module installed
+<br>1. Azure CLI
+<br>2. Az PowerShell Module
 <br>3. Cloud Shell*
+<br><br>* If you cannot install the Azure CLI or Az PowerShell Module locally, Cloud Shell is another alternative to running commands, scripts, and templates.
 
 **Login to your Azure account**
 
     az login
-Note: Cloud Shell will automatically logs you in your account.
+Note: Cloud Shell automatically logs you in your account.
 
 AKS needs permissions to manage resources in Azure & interact with Azure APIs e.g. launching LoadBalancers, virtual machines etc. Assuming that you have required permissions to create Service Principal, let's create one. \
 It needs minimal permission of "Network Contributer" role on subnet in which it'll launch nodes, podes and services and of "Reader" role to pull images from ACR.
