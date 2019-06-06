@@ -42,27 +42,6 @@ and finally you need objectID
 
 >Note them down as these values are needed for deploying AKS cluster.
 
-**Clone [demok8s](https://aka.ms/aksdevops) repo locally:**
-
-    git clone https://github.com/pkumar26/demok8s.git
-    cd demok8s
-
->Repo has following files in it:
-
-    * *.md files - Hands-On lab instructions
-    * k8sDeploy.json - Main AKS deployment template. Feel free to look but no editing is needed for this demo
-    * k8sDeploy.param.json - contains values of all parameters used in main template
-    * acrDeploy.json - ACR deployment template
-    * acrDeploy.param.json - parameters file for ACR template
-    * helloworld-internal.yaml - k8s deployment file for application to be accessible on internal network
-    * helloworld-v1.yaml - k8s deployment file for Version 1 of public facing application
-    * helloworld-v2.yaml - k8s deployment file for Version 2 of public facing application
-    * storage.yaml - provisioning Azure disk managed storage provider
-    * stateful-mongo.yaml - Mongodb with persistent storage
-    * headless.yaml - Mongodb service defination
-    * azure-pipelines.yaml - Artifacts build pipeline for CD
-    * appinsights-demo.yaml - Container deployment with app insights.
-
 **Install Azure PowerShell module if it's not already installed & connect to your account - not needed if using Azure Cloud Shell**
 
     Install-Module -Name Az -AllowClobber
