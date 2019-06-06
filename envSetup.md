@@ -1,17 +1,20 @@
 ## Configure environment (local or in Azure)
 <br>
 <b>Requirements:</b>
-<br>1. Azure CLI
+<br>1. Azure CLI OR
 <br>2. Az PowerShell Module
 <br>3. Cloud Shell - If you cannot install the Azure CLI or Az PowerShell Module locally, Cloud Shell is another alternative for running commands, scripts, and templates.
+<br><i>Links:</i>
+Bash/AzureCLI - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
+PowerShell - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart-powershell
 <br><br>
 <b>Login to your Azure account:</b>
 
     az login
 Note: Cloud Shell automatically logs you in your account.
 
-AKS needs permissions to manage resources in Azure & interact with Azure APIs e.g. launching LoadBalancers, virtual machines etc. Assuming that you have required permissions to create Service Principal, let's create one. \
-It needs minimal permission of "Network Contributer" role on subnet in which it'll launch nodes, podes and services and of "Reader" role to pull images from ACR.
+AKS needs permissions to manage resources in Azure & interact with Azure APIs e.g. launching LoadBalancers, virtual machines etc. Assuming that you have required permissions to create Service Principal, let's create a managed cluster. \
+The RBAC role needs minimal permission of "Network Contributer" role on the subnet it'll launch nodes, podes and services and of "Reader" role to pull images from ACR.
 
 **Create Service Principal (SP):**
 
