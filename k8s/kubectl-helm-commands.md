@@ -29,11 +29,11 @@
     --service-account tiller \
     --node-selectors "beta.kubernetes.io/os"="linux"
 
-<b>Use Helm to Deploy a NGINX Ingress Controller</b>
+<b>Use Helm to Deploy a NGINX Ingress Controller (use ingress-internal.yaml file in repo)</b>
     
     helm install stable/nginx-ingress \
     --namespace internal-ingress \
-    -f ingress-internal-lb.yaml \
+    -f ingress-internal.yaml \
     --set controller.replicaCount=2 \
     --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux
     
