@@ -43,6 +43,3 @@ Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -ResourceGroupName $resource
 –PermissionsToSecrets get,list,set,delete,backup,restore,recover,purge `
 –PermissionsToCertificates get,list,delete,create,import,update,managecontacts,getissuers,listissuers,setissuers,deleteissuers,manageissuers,recover,purge,backup,restore `
 -PermissionsToStorage get,list,delete,set,update,regeneratekey,getsas,listsas,deletesas,setsas,recover,backup,restore,purge 
-
-# Adding secret to Key Vault
-Set-AzKeyVaultSecret -VaultName $LabKVName -Name "VMPassword" -SecretValue (Get-Credential).Password
