@@ -15,6 +15,19 @@
 <b>Create namespace internal-ingress</b>
     
     kubectl create namespace internal-ingress
+    
+<b>Install Helm</b>
+        
+    kubectl apply -f helm.rbac.yaml
+    helm init --service-account tiller --node-selectors "beta.kubernetes.io/os"="linux"
+    helm init \
+    --tiller-tls \
+    --tiller-tls-cert tiller.cert.pem \
+    --tiller-tls-key tiller.key.pem \
+    --tiller-tls-verify \
+    --tls-ca-cert ca.cert.pem \
+    --service-account tiller \
+    --node-selectors "beta.kubernetes.io/os"="linux"
 
 <b>Use Helm to Deploy a NGINX Ingress Controller</b>
     
@@ -30,3 +43,15 @@
     alternating-coral-nginx-ingress-controller      LoadBalancer 10.0.248.59    10.10.1.200 80:31507/TCP,443:30707/TCP  1m
     alternating-coral-nginx-ingress-default-backend ClusterIP    10.0.134.66    <none>      80/TCP                      1m
     
+<b>
+    
+    helm search
+    
+<b>Run Demo Applications</b>
+
+
+
+
+
+
+helm search
