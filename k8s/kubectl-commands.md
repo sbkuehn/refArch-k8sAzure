@@ -1,4 +1,4 @@
-**kubectl commands**
+## kubectl commands
 
 
 <b>Connect and Apply internal-lb.yaml to the Kubernetes cluster:</b>
