@@ -1,15 +1,32 @@
-## kubectl commands
+## kubectl and helm commands
 
 
-<b>Connect and Apply internal-lb.yaml to the Kubernetes cluster:</b>
+<b>Connect and Apply ingress-internal-lb.yaml to the Kubernetes cluster:</b>
 
     az aks get-credentials --name k8sSecure --resource-group k8sSecure
     Merged "k8sSecure" as current context in /Users/skuehn/.kube/config
     
-    kubectl apply -f internal-lb.yaml
+    kubectl apply -f ingress-internal-l.yaml
     kubectl get service secure-k8s
     
     NAME           TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
-    internal-app   LoadBalancer   10.0.248.59   10.240.0.7    80:30555/TCP   2m
+    internal-app   LoadBalancer   10.0.248.59   10.10.1.200    80:30555/TCP   2m
 
-<b>Specify an IP Address for Internal Load Balancer</b>
+<b>Create namespace internal-ingress</b>
+    
+    kubectl create namespace internal-ingress
+
+<b>Use Helm to Deploy a NGINX Ingress Controller</b>
+    
+    helm install stable/nginx-ingress \
+    --namespace internal-ingress \
+    -f ingress-internal-lb.yaml \
+    --set controller.replicaCount=2 \
+    --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux
+    
+    kubectl get service -l app=nginx-ingress --namespace internal-ingress
+    
+    NAME                                            TYPE         CLUSTER-IP     EXTERNAL-IP PORTS                       AGE
+    alternating-coral-nginx-ingress-controller      LoadBalancer 10.0.248.59    10.10.1.200 80:31507/TCP,443:30707/TCP  1m
+    alternating-coral-nginx-ingress-default-backend ClusterIP    10.0.134.66    <none>      80/TCP                      1m
+    
