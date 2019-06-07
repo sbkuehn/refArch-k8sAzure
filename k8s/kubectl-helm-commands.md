@@ -4,7 +4,7 @@
 <b>Connect and Apply ingress-internal-lb.yaml to the Kubernetes cluster:</b>
 
     az aks get-credentials --name k8sSecure --resource-group k8sSecure
-    Merged "k8sSecure" as current context in /Users/skuehn/.kube/config
+    Merged "k8sSecure" as current context in /Users/username/.kube/config
     
     kubectl apply -f ingress-internal-l.yaml
     kubectl get service secure-k8s
