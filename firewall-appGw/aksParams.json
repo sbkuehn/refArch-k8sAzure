@@ -9,7 +9,12 @@
       "value": "eb8e6c40-2735-43a7-a68e-0e127a14d80b"
     },
     "spSecret": {
-      "value": "5b9a0b2c-52ee-4b84-9c4e-76b337a95d0b"
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/9c29eddd-8897-46b5-b8ca-503e7ba5b463/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+        },
+        "secretName": "spPw"
+      }
     },
     "rgName": {
       "value": "k8sSecure-2"
@@ -60,7 +65,12 @@
       "value": "sbkadmin"
     },
     "sshPubKey": {
-      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2KqvxyHC/8E0nf8Fnwvayyc3m50tOXOhY/9c2ZLMofuMSAViuQgpCsfFTfy23NOugqbdrFO1bTDr+OPlW+jL2hk1s+GYunPfY89aGIoS9qyk20K+TS24mYyk+HWhkqncOT14O5fAe7qfkQvNQmhS+nyDi98pGhART3CabO9IMlgpxor/rAgjdPKyYHSBIWpMGxyhiMV+DQnoyipD7KZOdKEv2QwcEX96nrTAv41llMOnUTV9bv2ivqItmJL9wWIGhBGrEk12HyPZubMGw8wODjXhvqDnNN81s+ro7LObKTLXVbaB886zzLNApFIu/Aaeij1vrr43dSquz+2Zmj6fT skuehn@Shannons-MacBook-Pro.local"
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/9c29eddd-8897-46b5-b8ca-503e7ba5b463/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+        },
+      "secretName": "k8sSsh"
+      }
     },
     "maxPods": {
       "value": 31
