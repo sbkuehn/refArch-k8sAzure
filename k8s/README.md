@@ -1,4 +1,4 @@
-**Background:**
+# Deploying Kubernetes Cluster in Azure
 <br>Getting to this folder means you started with the setup folder. In order to deploy this cluster, you need a service principal in AAD and a public SSH key. Between the setup and keyVault folder, you should have generated a service principal, generated a public SSH key, created a Key Vault, and stored both of those secrets in to reference within the template. 
 
 **Information on K8s Configuration**
