@@ -8,7 +8,7 @@
 <i><br>- This deployment does not deploy a public load balancer.
  <br>- This deployment reports to an existing Log Analytics workspace.</i>
   
-2) **aksParams.json** - this is the parameters file for the ARM template deployment. Future deployments can be conducted by editing these parameters first adn re-deploying.
+2) **aksParams.json** - this is the parameters file for the ARM template deployment. Future deployments can be conducted by editing these parameters first and then re-deploying.
 
 3) **kubectl-helm-commands.md** - this file guides you on how to connect to your Kubernetes cluster, create a namespace, create a Tiller service account for helm, install helm, and create an internal ingress controller for your Kubernetes cluster. 
 
