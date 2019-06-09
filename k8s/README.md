@@ -4,7 +4,7 @@
 **Information on K8s Configuration**
 <br><br>Within this folder, you will find the following files:
 
-1) **aksDeploy.json** - ARM template that deploys the Kubernetes cluster. This file declares all the Kubernetes cluster, which comprises of deploying nodes (VMs), nics, the Availability Set, and the NSG. Additional comments on this deployment:
+1) **aksDeploy.json** - ARM template that deploys the Kubernetes cluster. This file declares all the Kubernetes cluster, which comprises of deploying nodes (VMs), nics, the Availability Set, and the NSG. Additional comments:
 <i><br>- This deployment does not deploy a public load balancer.
  <br>- This deployment reports to an existing Log Analytics workspace.</i>
   
