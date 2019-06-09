@@ -1,7 +1,7 @@
 ## kubectl and helm commands
 
 
-<b>Connect and Apply ingress-internal-lb.yaml to the Kubernetes cluster:</b>
+<b>Connect and Configure Internal Ingress Controller for K8s:</b>
 
     az aks get-credentials --name k8sSecure --resource-group k8sSecure
     Merged "k8sSecure" as current context in /Users/username/.kube/config
@@ -37,15 +37,3 @@
     alternating-coral-nginx-ingress-controller      LoadBalancer 10.0.248.59    10.10.1.200 80:31507/TCP,443:30707/TCP  1m
     alternating-coral-nginx-ingress-default-backend ClusterIP    10.0.134.66    <none>      80/TCP                      1m
     
-<b>
-    
-    helm search
-    
-<b>Run Demo Applications</b>
-
-
-
-
-
-
-helm search
