@@ -1,10 +1,6 @@
 **Background:**
 <br>Getting to this folder means you started with the setup folder. In order to deploy this cluster, you need a service principal in AAD and a public SSH key. Between the setup and keyVault folder, you should have generated a service principal, generated a public SSH key, created a Key Vault, and stored both of those secrets in to reference within the template. Additionally, your K8s cluster should be deployed with an internal ingress controller. 
 
-**Deployment Notes**
-
-<br><br>This deployment will add an Application Gateway to your existing internal K8s cluster. The Application Gateway will have a public IP address, have WAF enabled, and configure WAF rules for deployment. All configurations can be adjusted to fit your deployment requirements.
-
 **Information on K8s Configuration**
 <br><br>Within this folder, you will find the following files:
 
