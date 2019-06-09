@@ -8,11 +8,11 @@
 <i><br>- This deployment does not deploy a public load balancer.
  <br>- This deployment reports to an existing Log Analytics workspace.</i>
   
-2) **aksParams.json** - this is the parameters file for the ARM template deployment. Future deployments can be conducted by editing these parameters first.
+2) **aksParams.json** - this is the parameters file for the ARM template deployment. Future deployments can be conducted by editing these parameters first adn re-deploying.
 
-3) **kubectl-helm-commands.md** - this file guides you on how to connect to your Kubernetes cluster, create a namespace, create a Tiller service account for helm, install helm, and create an internal ingress controller for your Kubernetes cluster.
+3) **kubectl-helm-commands.md** - this file guides you on how to connect to your Kubernetes cluster, create a namespace, create a Tiller service account for helm, install helm, and create an internal ingress controller for your Kubernetes cluster. 
 
 4) **helm-rbac.yaml** - this is the file to run while connected to your Kubernetes cluster so you can create the Tiller service account for helm.
 
-5) **ingress-internal.yaml** - this is the file to use for your helm command to install an nginx internal ingress controller.
+5) **ingress-internal.yaml** - this is the file to use for your larger helm command to install an nginx internal ingress controller. 
 
