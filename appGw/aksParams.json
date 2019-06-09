@@ -69,7 +69,7 @@
         "keyVault": {
           "id": "/subscriptions/9c29eddd-8897-46b5-b8ca-503e7ba5b463/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
         },
-      "secretName": "k8sSsh"
+        "secretName": "k8sSsh"
       }
     },
     "maxPods": {
@@ -95,12 +95,6 @@
     },
     "aksEnv": {
       "value": "k8sSecure"
-    },
-    "enableLaAgent": {
-      "value": true
-    },
-    "laSku": {
-      "value": "standalone"
     }
   }
 }
