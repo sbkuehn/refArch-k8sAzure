@@ -1,11 +1,11 @@
 **Background:**
-Getting to this folder means you started with the setup folder. In order to deploy this cluster, you need a service principal in AAD and a public SSH key. Between the setup and keyVault folder, you should have generated a service principal, generated a public SSH key, created a Key Vault, and stored both of those secrets in to reference within the template. 
+<br>Getting to this folder means you started with the setup folder. In order to deploy this cluster, you need a service principal in AAD and a public SSH key. Between the setup and keyVault folder, you should have generated a service principal, generated a public SSH key, created a Key Vault, and stored both of those secrets in to reference within the template. 
 
 **Information on K8s Configuration**
 Within this folder, you will find the following files:
 
 1) aksDeploy.json - ARM template that deploys the Kubernetes cluster. This file declares all the Kubernetes cluster, which comprises of deploying nodes (VMs), nics, the Availability Set, and the NSG. Additional comments on this deployment:
-<i>- This deployment does not deploy a public load balancer.
+<i><br>- This deployment does not deploy a public load balancer.
 - This deployment reports to an existing Log Analytics workspace.</i>
   
 2) aksParams.json - this is the parameters file for the ARM template deployment. Future deployments can be conducted by editing these parameters first.
