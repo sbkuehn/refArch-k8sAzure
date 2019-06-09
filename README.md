@@ -3,7 +3,7 @@
 <br>Shannon Kuehn
 <br><br>
 © 2019 Microsoft Corporation. 
-All rights reserved. Sample scripts/code provided herein are not supported under any Microsoft standard support program 
+<br>All rights reserved. Sample scripts/code provided herein are not supported under any Microsoft standard support program 
 or service. The sample scripts/code are provided AS IS without warranty of any kind. Microsoft disclaims all implied 
 warranties including, without limitation, any implied warranties of merchantability or of fitness for a particular purpose. 
 The entire risk arising out of the use or performance of the sample scripts and documentation remains with you. In no event 
