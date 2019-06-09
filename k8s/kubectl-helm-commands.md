@@ -21,11 +21,6 @@
     kubectl apply -f helm.rbac.yaml
     helm init --service-account tiller --node-selectors "beta.kubernetes.io/os"="linux"
     helm init \
-    --tiller-tls \
-    --tiller-tls-cert tiller.cert.pem \
-    --tiller-tls-key tiller.key.pem \
-    --tiller-tls-verify \
-    --tls-ca-cert ca.cert.pem \
     --service-account tiller \
     --node-selectors "beta.kubernetes.io/os"="linux"
 
