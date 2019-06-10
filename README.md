@@ -14,7 +14,7 @@ documentation, even if Microsoft has been advised of the possibility of such dam
 
 # Infrastructure as Code
 Reference Architecture
-<br><i>Azure Kubernetes Service (AKS)</i>
+<br><i>Azure Kubernetes Service (AKS) - Azure CNI Plugin</i>
 <br><br>Files/Folders for this Repository:
 <br>   1) README.md - markdown file that contains all information for repo (files, folders, steps).
 <br>   2) setup - general setup information (Azure CLI, PowerShell, generating ssh keys, setting up Service Principal)
