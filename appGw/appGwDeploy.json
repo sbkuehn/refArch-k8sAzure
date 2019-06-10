@@ -9,12 +9,6 @@
         "description": "Location for all resources."
       }
     },
-    "k8sName": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of existing K8s cluster in Azure."
-      }
-    },
     "wafEnabled": {
       "type": "bool",
       "defaultValue": true,
