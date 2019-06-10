@@ -9,6 +9,12 @@
         "description": "Location for all resources."
       }
     },
+    "k8sName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of existing K8s cluster in Azure."
+      }
+    },
     "wafEnabled": {
       "type": "bool",
       "defaultValue": true,
@@ -72,6 +78,12 @@
         "description": "Name of Application Gateway."
       }
     },
+    "appGatewayRuleName": {
+      "type": "string",
+      "metadata": {
+        "description": "App Gateway rule name."
+      }
+    },
     "appGtwySize": {
       "type": "string",
       "metadata": {
@@ -110,7 +122,7 @@
       }
     },
     {
-      "apiVersion": "2017-06-01",
+      "apiVersion": "2018-12-01",
       "name": "[parameters('appGtwyName')]",
       "type": "Microsoft.Network/applicationGateways",
       "location": "[parameters('location')]",
@@ -130,15 +142,31 @@
               "subnet": {
                 "id": "[variables('appGtwySubRef')]"
               }
-            }
+            },
+            "type": "Microsoft.Network/applicationGateways/gatewayIPConfigurations"
           }
         ],
+        "sslCertificates": [],
+        "authenticationCertificates": [],
         "frontendIPConfigurations": [
           {
-            "name": "appGatewayFrontendIP",
+            "name": "appGatewayPublicFrontendIP",
+            "type": "Microsoft.Network/applicationGateways/frontendIPConfigurations",
             "properties": {
-              "PublicIPAddress": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('appGtwyPipDomainName'))]"
+              }
+            }
+          },
+          {
+            "name": "appGwPrivateFrontendIp",
+            "type": "Microsoft.Network/applicationGateways/frontendIPConfigurations",
+            "properties": {
+              "privateIPAddress": "10.10.3.25",
+              "privateIPAllocationMethod": "Static",
+              "subnet": {
+                "id": "[variables('appGtwySubRef')]"
               }
             }
           }
@@ -146,72 +174,85 @@
         "frontendPorts": [
           {
             "name": "appGatewayFrontendPort",
+            "type": "Microsoft.Network/applicationGateways/frontendPorts",
             "properties": {
               "Port": 80
             }
           }
         ],
-        "backendAddressPools": [
-          {
-            "name": "appGatewayBackendPool",
-            "properties": {
-              "BackendAddresses": [
-                {
-                  "IpAddress": "[variables('k8sIngressControllerIp')]"
-                }
-              ]
+          "backendAddressPools": [
+            {
+              "name": "appGatewayBackendPool",
+              "type": "Microsoft.Network/applicationGateways/frontendIPConfigurations",
+              "properties": {
+                 "backendAddresses": [
+                    {
+                      "IpAddress": "[variables('k8sIngressControllerIp')]"
+                    }
+                  ]
+              }
             }
-          }
-        ],
-        "backendHttpSettingsCollection": [
-          {
-            "name": "appGatewayBackendHttpSettings",
-            "properties": {
-              "Port": 80,
-              "Protocol": "Http",
-              "CookieBasedAffinity": "Disabled"
+          ],
+          "backendHttpSettingsCollection": [
+            {
+              "name": "appGatewayBackendHttpSettings",
+              "type": "Microsoft.Network/applicationGateways/backendHttpSettingsCollection",
+              "properties": {
+                "Port": 80,
+                "Protocol": "Http",
+                "CookieBasedAffinity": "Disabled",
+                "pickHostNameFromBackendAddress": false,
+                "requestTimeout": 30
+              }
             }
-          }
-        ],
+          ],
         "httpListeners": [
           {
             "name": "appGatewayHttpListener",
+            "type": "Microsoft.Network/applicationGateways/httpListeners",
             "properties": {
               "FrontendIPConfiguration": {
-                "Id": "[concat(variables('applicationGatewayID'), '/frontendIPConfigurations/appGatewayFrontendIP')]"
+                "Id": "[concat(variables('applicationGatewayID'), '/frontendIPConfigurations/appGatewayPublicFrontendIP')]"
               },
               "FrontendPort": {
                 "Id": "[concat(variables('applicationGatewayID'), '/frontendPorts/appGatewayFrontendPort')]"
               },
               "Protocol": "Http",
-              "SslCertificate": null
+              "SslCertificate": null,
+              "requireServerNameIndication": false
             }
           }
         ],
-        "requestRoutingRules": [
-          {
-            "Name": "rule1",
-            "properties": {
-              "RuleType": "Basic",
-              "httpListener": {
-                "id": "[concat(variables('applicationGatewayID'), '/httpListeners/appGatewayHttpListener')]"
-              },
-              "backendAddressPool": {
-                "id": "[concat(variables('applicationGatewayID'), '/backendAddressPools/appGatewayBackendPool')]"
-              },
-              "backendHttpSettings": {
-                "id": "[concat(variables('applicationGatewayID'), '/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
+        "urlPathMaps": [],
+          "requestRoutingRules": [
+            {
+              "name": "[parameters('appGatewayRuleName')]",
+              "type": "Microsoft.Network/applicationGateways/requestRoutingRules",
+              "properties": {
+                "RuleType": "Basic",
+                "httpListener": {
+                  "id": "[concat(variables('applicationGatewayID'), '/httpListeners/appGatewayHttpListener')]"
+                },
+                "backendAddressPool": {
+                  "id": "[concat(variables('applicationGatewayID'), '/backendAddressPools/appGatewayBackendPool')]"
+                },
+                "backendHttpSettings": {
+                  "id": "[concat(variables('applicationGatewayID'), '/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
+                }
               }
             }
-          }
-        ],
+          ],
         "webApplicationFirewallConfiguration": {
           "enabled": "[parameters('wafEnabled')]",
           "firewallMode": "[parameters('wafMode')]",
           "ruleSetType": "[parameters('wafRuleSetType')]",
           "ruleSetVersion": "[parameters('wafRuleSetVersion')]",
-          "disabledRuleGroups": []
-        }
+          "disabledRuleGroups": [],
+          "requestBodyCheck": true,
+          "maxRequestBodySizeInKb": 128,
+          "fileUploadLimitInMb": 100
+        },
+        "enableHttp2": false
       }
 },
     {
