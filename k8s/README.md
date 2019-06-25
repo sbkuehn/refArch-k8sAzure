@@ -5,7 +5,7 @@
 <br><br>Within this folder, you will find the following files:
 
 1) **aksDeploy.json** - ARM template that deploys the Kubernetes cluster. This file declares all the Kubernetes cluster, which comprises of deploying nodes (VMs), nics, the Availability Set, and the NSG. Additional comments:
-<i><br>- This deployment does not deploy a public load balancer.
+<i><br>- This deployment deploys a private load balancer as an nginx ingress controller.
  <br>- This deployment reports to an existing Log Analytics workspace.</i>
   
 2) **aksParams.json** - this is the parameters file for the ARM template deployment. Future deployments can be conducted by editing these parameters first and then re-deploying.
