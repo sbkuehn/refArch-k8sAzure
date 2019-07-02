@@ -3,6 +3,8 @@
 param(
         [Parameter(Mandatory=$true)]
         [string] $keyVaultName
+        [Parameter(Mandatory=$true)]
+        [string] $secretName
 )
 
-Set-AzKeyVaultSecret -VaultName $keyVaultName -Name "VMPassword" -SecretValue (Get-Credential).Password
+Set-AzKeyVaultSecret -VaultName $keyVaultName -Name $secretName -SecretValue (Get-Credential).Password
