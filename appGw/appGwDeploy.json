@@ -300,7 +300,6 @@
             "name": "k8sprobe",
             "type": "Microsoft.Network/applicationGateways/probes",
             "properties": {
-              "provisioningState": "Succeeded",
               "protocol": "Http",
               "host": "public-demo-echo-service.kube.local",
               "path": "/health/check",
