@@ -1,5 +1,12 @@
-**Background:**
-<br>Getting to this folder means you started with the setup folder. In order to deploy this cluster, you need a service principal in AAD and a public SSH key. Between the setup and keyVault folder, you should have generated a service principal, generated a public SSH key, created a Key Vault, and stored both of those secrets in to reference within the template. 
+# Application Gateway and API Management Gateway
+<br>Getting to this folder means you started with the setup, keyVault, and k8s folders. By the point you reach this folder, you should have a public SSH key stored in Key Vault, a Service Principal with secret stored in Key Vault, a VNet, and a K8s cluster with an internal ingress controller.
+
+**Deployment Notes**
+<br><br>There are a few additional files in this folder:
+<br>1) **echo-api.yaml** - once the K8s cluster is deployed, apply this yaml file to the K8s cluster by running kubectl apply -f echo-api.yaml (as is, no adjustments). The yaml file has already been adjusted from an internal ingress GitHub sample repo, located <a href="https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/customization/external-auth-headers/deploy/echo-service.yaml">here</a>. The major tweaks to this yaml file are related to removing the auth headers from the original. Deploying the echo service allows the Application Gateway to use a custom probe for backend health reporting.
+<br>2) **appGwDeploy.json** - this is the ARM template that adds an Application Gateway to the final deployment. The SSL cert password needs to be passed as a string vs. a secure string. There is a custom probe that leans on an echo service you deploy prior to deploying the Application Gateway.
+<br>3) **appGwParams.json** - this is the parameters file for the ARM template deployment. 
+<br><br>Deploying all 3 files will add an Application Gateway to your existing internal K8s cluster. The Application Gateway will have a public IP address, have WAF enabled, and WAF rules are configured for deployment. All configurations can be adjusted to fit your deployment requirements. 
 
 **Information on K8s Configuration**
 <br><br>Within this folder, you will find the following files:
