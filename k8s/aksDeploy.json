@@ -71,32 +71,32 @@
     "logAnalyticsWorkspaceId": {
       "type": "string",
       "metadata": {
-        "description": "Log Analytics Workspace Resource ID so cluster can send logging/monitoring to Azure native service."
+        "description": "Log Analytics Workspace Resource ID so cluster can send logging/monitoring to Azure native service"
       }
     },
     "aksClusterName": {
       "type": "string",
       "metadata": {
-        "description": "The name of the Managed Cluster resource."
+        "description": "The name of the Managed Cluster resource"
       }
     },
     "dnsPrefix": {
       "type": "string",
       "metadata": {
-        "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN."
+        "description": "Optional DNS prefix to use with hosted Kubernetes API server FQDN"
       }
     },
     "k8sVersion": {
       "type": "string",
       "metadata": {
-        "description": "Version of Kubernetes."
+        "description": "Version of Kubernetes"
       }
     },
     "nodeCount": {
       "type": "int",
       "defaultValue": 3,
       "metadata": {
-        "description": "The number of agent nodes for the cluster."
+        "description": "The number of agent nodes for the cluster"
       },
       "minValue": 1,
       "maxValue": 50
@@ -105,7 +105,7 @@
       "type": "string",
       "defaultValue": "Standard_D2_v2",
       "metadata": {
-        "description": "The size of the Virtual Machines deployed as each node."
+        "description": "The size of the Virtual Machines deployed as each node"
       }
     },
     "osType": {
@@ -115,7 +115,7 @@
         "Linux"
       ],
       "metadata": {
-        "description": "The type of operating system."
+        "description": "The type of operating system"
       }
     },
     "osAdminUser": {
@@ -134,14 +134,14 @@
       "type": "int",
       "defaultValue": 31,
       "metadata": {
-        "description": "Maximum number of pods that can run on a node."
+        "description": "Maximum number of pods that can run on a node"
       }
     },
     "enableHttpApplicationRouting": {
       "type": "bool",
       "defaultValue": false,
       "metadata": {
-        "description": "boolean flag to turn on and off of http application routing"
+        "description": "Boolean flag to turn on and off of http application routing"
       }
     },
     "networkPlugin": {
