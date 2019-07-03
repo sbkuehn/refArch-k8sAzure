@@ -1,5 +1,5 @@
 # Application Gateway and API Management Gateway
-<br>Getting to this folder means you started with the setup, keyVault, and k8s folders. By the point you reach this folder, you should have a public SSH key stored in Key Vault, a Service Principal with secret stored in Key Vault, a VNet, and a K8s cluster with an internal ingress controller.
+<br>Getting to this folder means you started with the setup, keyVault, and k8s folders. By the point you reach this folder, you should have a public SSH key stored in Key Vault, a Service Principal with secret stored in Key Vault, a VNet, and a K8s cluster with an internal ingress controller. In the event you do not have that set up, the files within this folder will also generate the same setup so you can add an API Management Gateway and Application Gateway to. The difference between this folder and the k8s folder is you will add an Application Gateway and API Management Gateway. The API Management Gateway will have a health check API that serves as an echo service for the Application Gateway backend health.
 
 **Deployment Notes**
 <br><br>There are a few additional files in this folder:
