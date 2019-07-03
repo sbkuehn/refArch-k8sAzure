@@ -1,5 +1,5 @@
 # Application Gateway
-<br>Getting to this folder means you started with the setup folder. In order to deploy this cluster, you need a service principal in AAD and a public SSH key. Between the setup and keyVault folder, you should have generated a service principal, generated a public SSH key, created a Key Vault, and stored both of those secrets in to reference within the template. 
+<br>Getting to this folder means you started with the setup, keyVault, and k8s folders. By the point you reach this folder, you should have a public SSH key stored in Key Vault, a Service Principal with secret stored in Key Vault, a VNet, and a K8s cluster with an internal ingress controller.
 
 **Deployment Notes**
 <br><br>There are a few additional files in this folder:
