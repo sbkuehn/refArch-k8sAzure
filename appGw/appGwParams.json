@@ -2,9 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "k8sName": {
-      "value": "k8sSecure"
-    },
     "existingVNETName": {
       "value": "k8sVnet"
     },
@@ -14,6 +11,22 @@
     "newSubnetAddressPrefix": {
       "value": "10.10.3.0/24"
     },
+    "frontendCertData": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/9c29eddd-8897-46b5-b8ca-503e7ba5b463/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+        },
+        "secretName": "shakeenwildcardsslcert"
+      }
+    },
+    "sslCertificatePassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/9c29eddd-8897-46b5-b8ca-503e7ba5b463/resourceGroups/keyVault/providers/Microsoft.KeyVault/vaults/kv-6e6dnpt2p5fxi"
+        },
+        "secretName": "sslcertpw"
+      }
+    },
     "appGtwyName": {
       "value": "k8sSecure"
     },
@@ -22,6 +35,12 @@
     },
     "appGtwyCapacity": {
       "value": 1
+    },
+    "appGatewayRuleName1": {
+      "value": "appGwRule1"
+    },
+    "appGatewayRuleName2": {
+      "value": "appGwRule2"
     }
   }
 }
