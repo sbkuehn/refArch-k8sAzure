@@ -152,7 +152,7 @@
       ],
       "defaultValue": "azure",
       "metadata": {
-        "description": "Network plugin used for building Kubernetes network."
+        "description": "Network plugin used for building Kubernetes network"
       }
     },
     "enableRBAC": {
@@ -165,19 +165,19 @@
     "serviceCidr": {
       "type": "string",
       "metadata": {
-        "description": "A CIDR notation IP range from which to assign service cluster IPs."
+        "description": "A CIDR notation IP range from which to assign service cluster IPs"
       }
     },
     "dnsServiceIP": {
       "type": "string",
       "metadata": {
-        "description": "Containers DNS server IP address - lives in the same subnet as the service CIDR."
+        "description": "Containers DNS server IP address - lives in the same subnet as the service CIDR"
       }
     },
     "dockerBridgeCidr": {
       "type": "string",
       "metadata": {
-        "description": "A CIDR notation IP for Docker bridge."
+        "description": "A CIDR notation IP for Docker bridge"
       }
     },
     "aksEnv": {
@@ -190,7 +190,7 @@
       "type": "string",
       "defaultValue": "[resourceGroup().location]",
       "metadata": {
-        "description": "Location of deployed resources."
+        "description": "Location of deployed resources"
       }
     }
   },
