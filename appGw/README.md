@@ -1,5 +1,5 @@
 # Application Gateway
-<br>Getting to this folder means you started with the setup, keyVault, and k8s folders. By the point you reach this folder, you should have a public SSH key stored in Key Vault, a Service Principal with secret stored in Key Vault, a VNet, and a K8s cluster with an internal ingress controller. In the event you do not have that set up, the files within this folder will also generate the same setup so you can add an Application Gateway to the mix. The difference between this folder and the k8s folder is you will create an echo api service on your cluster.
+<br>Getting to this folder means you started with the setup, keyVault, and k8s folders. By the point you reach this folder, you should have a public SSH key stored in Key Vault, a Service Principal with secret stored in Key Vault, a VNet, and a K8s cluster with an internal ingress controller. In the event you do not have that set up, the files within this folder will also generate the same setup so you can add an Application Gateway. The difference between this folder and the k8s folder is you will create an echo api service on your cluster.
 
 **Deployment Notes**
 <br><br>There are a few additional files in this folder:
