@@ -3,10 +3,8 @@
 
 **Deployment Notes**
 <br><br>There are a few additional files in this folder:
-<br>1) **echo-api.yaml** - once the K8s cluster is deployed, apply this yaml file to the K8s cluster by running kubectl apply -f echo-api.yaml (as is, no adjustments). The yaml file has already been adjusted from an internal ingress GitHub sample repo, located <a href="https://github.com/kubernetes/ingress-nginx/blob/master/docs/examples/customization/external-auth-headers/deploy/echo-service.yaml">here</a>. The major tweaks to this yaml file are related to removing the auth headers from the original. Deploying the echo service allows the Application Gateway to use a custom probe for backend health reporting.
-<br>2) **appGwDeploy.json** - this is the ARM template that adds an Application Gateway to the final deployment. The SSL cert password needs to be passed as a string vs. a secure string. There is a custom probe that leans on an echo service you deploy prior to deploying the Application Gateway.
-<br>3) **appGwParams.json** - this is the parameters file for the ARM template deployment. 
-<br><br>Deploying all 3 files will add an Application Gateway to your existing internal K8s cluster. The Application Gateway will have a public IP address, have WAF enabled, and WAF rules are configured for deployment. All configurations can be adjusted to fit your deployment requirements. 
+<br>1) **appGwApimDeploy.json** - this is the deployment ARM template for both the Application Gateway and the API Management Gateway. The APIM is set as internal and the healthcheck API code is configured as an API, an API operation, and an API policy. The end configuration has a custom healthcheck API exposed on the APIM that allows the Application Gateway's backends to report as healthy.
+<br>2) **appGwApimParams.json** - these are the parameters for the Application Gateway and APIM deployment.
 
 **Information on K8s Configuration**
 <br><br>Within this folder, you will find the following files:
