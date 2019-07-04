@@ -66,7 +66,7 @@ Bash:
     echo resourceGroupName=$resourceGroupName >> ~/.bashrc
 
 
-**Create resource group to hold together all deployed resources:**\
+**Create resource group to place all deployed resources together:**\
 PowerShell:
 
     New-AzResourceGroup `
