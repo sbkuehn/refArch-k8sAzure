@@ -28,7 +28,7 @@
       }
     },
     "appGtwyName": {
-      "value": "k8sSecure"
+      "value": "k8s"
     },
     "appGtwySize": {
       "value": "WAF_Medium"
