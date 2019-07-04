@@ -1,4 +1,4 @@
-## Configure environment (local or in Azure)
+## Configure Environment (either local or in Azure using Cloud Shell)
 <br>
 <b>Requirements:</b>
 <br>1. Azure CLI OR
