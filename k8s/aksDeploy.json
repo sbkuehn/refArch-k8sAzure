@@ -132,7 +132,7 @@
     },
     "maxPods": {
       "type": "int",
-      "defaultValue": 31,
+      "defaultValue": 30,
       "metadata": {
         "description": "Maximum number of pods that can run on a node"
       }
