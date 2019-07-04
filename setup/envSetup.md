@@ -5,8 +5,8 @@
 <br>2. Az PowerShell Module
 <br>3. Cloud Shell - If you cannot install the Azure CLI or Az PowerShell Module locally, Cloud Shell is another alternative for running commands, scripts, and templates.
 <br><i>Links:</i>
-Bash/AzureCLI - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
-PowerShell - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart-powershell
+<br>Bash/AzureCLI - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
+<BR>PowerShell - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart-powershell
 <br><br>
 <b>Login to your Azure account:</b>
 
