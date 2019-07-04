@@ -16,7 +16,7 @@
     
     kubectl create namespace internal-ingress
     
-<b>Install Helm</b>
+<b>Install Helm Locally or via Cloud Shell (then use helm-rbac.yaml file from repo for next steps)</b>
         
     kubectl apply -f helm.rbac.yaml
     helm init \
