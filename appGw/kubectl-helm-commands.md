@@ -18,7 +18,7 @@
     
 <b>Install Helm Locally or via Cloud Shell (then use helm-rbac.yaml file from repo for next steps)</b>
         
-    kubectl apply -f helm.rbac.yaml
+    kubectl apply -f helm-rbac.yaml
     helm init \
     --service-account tiller \
     --node-selectors "beta.kubernetes.io/os"="linux"
@@ -30,6 +30,7 @@
     -f ingress-internal.yaml \
     --set controller.replicaCount=2 \
     --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux
+    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
     
     kubectl get service -l app=nginx-ingress --namespace internal-ingress
     
