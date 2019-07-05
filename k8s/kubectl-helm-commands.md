@@ -30,6 +30,7 @@
     -f ingress-internal.yaml \
     --set controller.replicaCount=2 \
     --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux
+    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
     
     kubectl get service -l app=nginx-ingress --namespace internal-ingress
     
