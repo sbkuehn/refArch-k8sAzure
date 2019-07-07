@@ -81,6 +81,6 @@ Bash:
     az group create --name $resourceGroupName --location $location
 
 **Kubernetes and Helm CLI Installation:**
-<br><br>In order to run the Kubernetes and Helm commands, you will need to install both (either locally or via Cloud Shell). Please examine these instructions and pick the best setup for your environment:
-<br>1. Kubernetes -  https://kubernetes.io/docs/tasks/tools/install-kubectl/
+<br>In order to run the Kubernetes and Helm commands, you will need to install both (either locally or via Cloud Shell). Please examine these instructions and pick the best setup for your environment:
+<br><br>1. Kubernetes -  https://kubernetes.io/docs/tasks/tools/install-kubectl/
 <br>2. Helm (just install Helm, don't initialize) - https://github.com/helm/helm/blob/master/docs/install.md
