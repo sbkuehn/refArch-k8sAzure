@@ -4,9 +4,11 @@
 <br>1. Azure CLI OR
 <br>2. Az PowerShell Module
 <br>3. Cloud Shell - If you cannot install the Azure CLI or Az PowerShell Module locally, Cloud Shell is another alternative for running commands, scripts, and templates.
+<br>4. Windows Subsystem for Linux
 <br><br><i>Links:</i>
 <br>Bash/AzureCLI - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
-<BR>PowerShell - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart-powershell
+<br>PowerShell - https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart-powershell
+<br>Install Windows Subsystem for Linux - https://docs.microsoft.com/en-us/windows/wsl/install-win10
 <br><br>
 <b>Login to your Azure account:</b>
 
@@ -78,3 +80,7 @@ Bash:
 
     az group create --name $resourceGroupName --location $location
 
+**Kubernetes and Helm CLI Installation:**
+In order to run the Kubernetes and Helm commands, you will need to install both (either locally or via Cloud Shell). Please examine these instructions and pick the best setup for your environment:
+1) Kubernetes -  https://kubernetes.io/docs/tasks/tools/install-kubectl/
+2) Helm (just install Helm, don't initialize) - https://github.com/helm/helm/blob/master/docs/install.md
