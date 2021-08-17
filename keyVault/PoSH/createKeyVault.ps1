@@ -31,7 +31,7 @@ Select-AzSubscription -SubscriptionName $subscriptionName
 New-AzResourceGroup -Name $resourceGroupName -Location $location
 
 # Create the Key Vault (enabling it for Disk Encryption, Deployment and Template Deployment)
-New-AzKeyVault -VaultName $keyVaultName -ResourceGroupName $resourceGroupName -Location $location `
+New-AzKeyVault -Name $keyVaultName -ResourceGroupName $resourceGroupName -Location $location `
     -EnabledForDiskEncryption -EnabledForDeployment -EnabledForTemplateDeployment
 
 # Add the Administrator policies to the Key Vault
