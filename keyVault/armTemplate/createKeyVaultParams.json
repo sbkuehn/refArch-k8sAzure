@@ -57,12 +57,6 @@
         "restore",
         "purge"
       ]
-    },
-    "tenantId": {
-      "value": "72f988bf-86f1-41af-91ab-2d7cd011db47"
-    },
-    "objectId": {
-      "value": "67a00545-bee5-4a8e-85ec-9a6595f7f0e0"
     }
   }
 }
